@@ -18,5 +18,6 @@ class Svgs {
   static const String logo = 'assets/svgs/logo.svg';
   static const String settingIcon = 'assets/svgs/setting_icon.svg';
   static const String student = 'assets/svgs/student.svg';
+  static const String uploadIcon = 'assets/svgs/upload_icon.svg';
   static const String vectorLeft = 'assets/svgs/vector_left.svg';
 }

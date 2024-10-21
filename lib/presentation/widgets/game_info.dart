@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:wavid_teacher/common/style/color.dart';
 import 'package:wavid_teacher/common/style/text_styles.dart';
+import 'package:wavid_teacher/presentation/pages/ingame_page.dart';
+import 'package:wavid_teacher/presentation/pages/main_page.dart';
+import 'package:wavid_teacher/presentation/pages/waiting_page.dart';
 import 'package:wavid_teacher/presentation/widgets/button.dart';
 import 'package:wavid_teacher/resources/resources.dart';
 
@@ -54,7 +57,11 @@ class GameInfo extends StatelessWidget {
           Text("초기 자본", style: titleStyle),
           Text("3,000,000", style: valueStyle),
           const SizedBox(height: 70),
-          const WButton(
+          WButton(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const IngamePage()));
+            },
             text: "게임 시작",
             isSingleColor: true,
             isSingleFontColor: false,
@@ -62,7 +69,11 @@ class GameInfo extends StatelessWidget {
             width: 210,
           ),
           const SizedBox(height: 18),
-          const WButton(
+          WButton(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const MainPage()));
+            },
             text: "나가기",
             isSingleColor: true,
             isSingleFontColor: true,

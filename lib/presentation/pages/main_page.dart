@@ -23,10 +23,11 @@ class MainPage extends StatelessWidget {
                     TextStyles(color: WColors.gray, fontSize: 20).textStyleR),
             const SizedBox(height: 26),
             Text("Stock Learn에서\n경제와 투자의 재미를.",
-                style:
-                    TextStyles(color: Colors.white, fontSize: 50).textStyleB),
+                style: TextStyles(color: Colors.white, fontSize: 50).textStyleB,
+                textAlign: TextAlign.center),
             const SizedBox(height: 68),
             WButton(
+              width: 300,
               text: "Create Room",
               isSingleColor: false,
               isSingleFontColor: true,

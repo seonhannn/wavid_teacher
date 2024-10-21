@@ -20,6 +20,7 @@ void main() {
     expect(File(Svgs.logo).existsSync(), isTrue);
     expect(File(Svgs.settingIcon).existsSync(), isTrue);
     expect(File(Svgs.student).existsSync(), isTrue);
+    expect(File(Svgs.uploadIcon).existsSync(), isTrue);
     expect(File(Svgs.vectorLeft).existsSync(), isTrue);
   });
 }

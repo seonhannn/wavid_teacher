@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wavid_teacher/presentation/pages/ingame_page.dart';
+import 'package:wavid_teacher/presentation/pages/main_page.dart';
 import 'package:wavid_teacher/presentation/pages/waiting_page.dart';
 
 void main() {
@@ -11,6 +12,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: IngamePage());
+    return const MaterialApp(home: MainPage());
   }
 }
