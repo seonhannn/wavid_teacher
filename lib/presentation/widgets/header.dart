@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:wavid_teacher/common/style/color.dart';
 import 'package:wavid_teacher/common/style/text_styles.dart';
+import 'package:wavid_teacher/presentation/pages/help_page.dart';
+import 'package:wavid_teacher/presentation/pages/inquiry_page.dart';
+import 'package:wavid_teacher/presentation/pages/main_page.dart';
 import 'package:wavid_teacher/resources/resources.dart';
 
 class Header extends StatelessWidget {
@@ -18,27 +21,48 @@ class Header extends StatelessWidget {
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             // left
-            Row(
-              children: [
-                SvgPicture.asset(Svgs.logo, width: 21),
-                const SizedBox(width: 12),
-                Text(
-                  "Stock Learn",
-                  style:
-                      TextStyles(color: Colors.white, fontSize: 20).textStyleB,
-                )
-              ],
+            GestureDetector(
+              onTap: () {
+                Navigator.popUntil(context, (route) => route.isFirst);
+              },
+              child: Row(
+                children: [
+                  SvgPicture.asset(Svgs.logo, width: 21),
+                  const SizedBox(width: 12),
+                  Text(
+                    "Stock Learn",
+                    style: TextStyles(color: Colors.white, fontSize: 20)
+                        .textStyleB,
+                  )
+                ],
+              ),
             ),
             // right
             if (constraints.maxWidth > 700)
               Row(children: [
                 SvgPicture.asset(Svgs.faqIcon, height: 15, width: 13),
                 const SizedBox(width: 8),
-                Text("도움말", style: TextStyles(color: WColors.gray).textStyleR),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HelpPage()));
+                    },
+                    child: Text("도움말",
+                        style: TextStyles(color: WColors.gray).textStyleR)),
                 const SizedBox(width: 60),
                 SvgPicture.asset(Svgs.inquiryIcon, height: 15),
                 const SizedBox(width: 8),
-                Text("문의", style: TextStyles(color: WColors.gray).textStyleR),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const InquiryPage()));
+                    },
+                    child: Text("문의",
+                        style: TextStyles(color: WColors.gray).textStyleR)),
                 const SizedBox(width: 60),
                 Text("오은영 선생님",
                     style: TextStyles(color: Colors.white, fontSize: 16)
